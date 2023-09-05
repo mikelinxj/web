@@ -1,0 +1,16 @@
+name: Greetings
+
+on: [pull_request_target, issues]
+
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+    steps:
+    - uses: actions/first-interaction@v1
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        issue-message: "Sera muy divertido poder hacer un proyecto juntos, por lo que vamos a sacar lo mejor de cada uno.(Lin)"
+        pr-message: "Ha sido un honor para mi poder seguir trabajando juntos, animo.(Lin)"
